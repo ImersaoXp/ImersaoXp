@@ -43,10 +43,7 @@ public class TecoTecoNervoso {
 		
 	}
 
-
-
-	public void atira() {
-		// TODO Auto-generated method stub
-		
+	public void atira() {		
+		tela[3][2] = '!';		
 	}
 }

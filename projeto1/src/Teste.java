@@ -1,18 +1,7 @@
 public class Teste {
 
-	public static void char[][] mapa = new char[10][80]; 
+	public static char[][] mapa = new char[10][80]; 
 	
-	public static void main(String[] args) throws Exception {
-
-		
-
-		movimentaAviao();
-	}
-
-
-
-
-
 
 	public static void movimentaAviao() throws InterruptedException {
 		int pos = 30;
@@ -39,11 +28,6 @@ public class Teste {
 
 	
 	
-	
-	
-	
-	
-	
 	public static String replicaChar(String str, int numero) {
 		String saida = "";
 		for (int i = 0; i < numero; i++) {
@@ -52,4 +36,13 @@ public class Teste {
 		return saida;
 	}
 
+	public static void main(String[] args) throws InterruptedException {
+		while (true) {
+			movimentaAviao();
+			System.out.println();
+			System.out.println();
+			//System.out.println("   " + System.currentTimeMillis());
+			Thread.sleep(300);
+		}
+	}
 }

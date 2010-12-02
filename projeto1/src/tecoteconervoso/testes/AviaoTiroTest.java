@@ -10,7 +10,7 @@ import tecoteconervoso.TecoTecoNervoso;
 public class AviaoTiroTest {
 	@Ignore
 	@SuppressWarnings("deprecation")
-	@Test public void aviaoAtira() {
+	@Test public void aviaoAtiraParado() {
 		TecoTecoNervoso jogo = new TecoTecoNervoso();
 		jogo.tela();
 		jogo.atira();
@@ -46,19 +46,20 @@ public class AviaoTiroTest {
 		Assert.assertEquals(telaEsperada, jogo.tela());
 		
 	}
+	
 	@Ignore
 	@SuppressWarnings("deprecation")
-	@Test public void tiroAndaLinhaReta() {
+	@Test public void aviaoAtiraEAnda() {
 		TecoTecoNervoso jogo = new TecoTecoNervoso();
 		jogo.tela();
-		jogo.atira();
 		jogo.direita();
+		jogo.atira();		
 		jogo.direita();
 		String[] telaEsperada = new String[] {
 				"     ",
 				"     ",
 				"     ",
-				"  !  ",
+				"   ! ",
 				"    ^",
 		};
 		Assert.assertEquals(telaEsperada, jogo.tela());
@@ -87,7 +88,7 @@ public class AviaoTiroTest {
 				"     ",
 				"^    ",
 		};
-		Assert.assertEquals(telaEsperada, jogo.tela());
-		
+		Assert.assertEquals(telaEsperada, jogo.tela());		
 	}
+
 }

@@ -1,7 +1,6 @@
 package tecoteconervoso.testes;
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import tecoteconervoso.TecoTecoNervoso;
@@ -22,7 +21,6 @@ public class TecoTecoNervosoTest {
 		Assert.assertEquals(telaInicial, jogo.tela());
 	}
 
-	@Ignore
 	@SuppressWarnings("deprecation")
 	@Test public void aviaoRespeitaLimiteDireito() {
 		jogo.direita();
@@ -37,7 +35,7 @@ public class TecoTecoNervosoTest {
 		};
 		Assert.assertEquals(telaEsperada, jogo.tela());
 	}
-	@Ignore
+	
 	@SuppressWarnings("deprecation")
 	@Test public void aviaoRespeitaLimiteEsquerdo() {
 		jogo.esquerda();
@@ -48,7 +46,7 @@ public class TecoTecoNervosoTest {
 				"     ",
 				"     ",
 				"     ",
-				"    ^",
+				"^    ",
 		};
 		Assert.assertEquals(telaEsperada, jogo.tela());
 	}

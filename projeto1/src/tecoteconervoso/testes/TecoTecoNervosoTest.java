@@ -7,7 +7,7 @@ import org.junit.Test;
 import tecoteconervoso.TecoTecoNervoso;
 
 public class TecoTecoNervosoTest {
-	@Ignore
+	
 	@SuppressWarnings("deprecation")
 	@Test public void telaInicial() {
 		TecoTecoNervoso jogo = new TecoTecoNervoso();

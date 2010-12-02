@@ -40,29 +40,28 @@ public class AviaoTiroTest {
 				"  ^  ",
 		};
 		Assert.assertEquals(telaEsperada, jogo.tela());
-		
+	}
+	
+	@Ignore
+	@SuppressWarnings("deprecation")
+	@Test public void TiroAndaSeisVezes() {
+		TecoTecoNervoso jogo = new TecoTecoNervoso();
+		jogo.tela();
+		jogo.atira();
 		jogo.tela();
 		jogo.tela();
-		telaEsperada = new String[] {
+		jogo.tela();
+		jogo.tela();
+		jogo.tela();
+		jogo.tela();
+		String[] telaEsperada = new String[] {
 				"     ",
-				"  !  ",
+				"     ",
 				"     ",
 				"     ",
 				"  ^  ",
 		};
 		Assert.assertEquals(telaEsperada, jogo.tela());
-
-		jogo.tela();
-		jogo.tela();
-		telaEsperada = new String[] {
-				"     ",
-				"     ",
-				"     ",
-				"     ",
-				"  ^  ",
-		};
-		Assert.assertEquals(telaEsperada, jogo.tela());
-		
 	}
 	
 	@Ignore

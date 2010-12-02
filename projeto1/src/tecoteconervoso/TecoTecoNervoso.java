@@ -35,18 +35,16 @@ public class TecoTecoNervoso {
 	}
 
 	public void direita() {
-		posicaoAviao++;				
+		if(posicaoAviao < 4)
+			posicaoAviao++;		
 	}
 
 	public void esquerda() {
-		posicaoAviao--;
-		
+		if(posicaoAviao > 0)
+		posicaoAviao--;		
 	}
 
-
-
-	public void atira() {
-		// TODO Auto-generated method stub
-		
+	public void atira() {		
+		tela[3][2] = '!';		
 	}
 }

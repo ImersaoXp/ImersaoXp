@@ -5,6 +5,8 @@ import java.util.Arrays;
 public class TecoTecoNervoso {
 	private char[][] tela = new char[5][5];
 	private int posicaoAviao;
+	private int posicaoTiro = -1;
+	private int posicaoTiroY = 2;
 	
 	public TecoTecoNervoso() {
 		super();
@@ -27,6 +29,11 @@ public class TecoTecoNervoso {
 	public String[] tela() {
 		limparTela();
 		tela[4][posicaoAviao] = '^';
+		
+		if(posicaoTiro != - 1){
+			tela[3][posicaoTiro] = '!';
+		}
+		
 		String[] saida = new String[5];
 		for (int i = 0; i < 5; i++) {
 			saida[i] = new String(tela[i]);
@@ -44,7 +51,8 @@ public class TecoTecoNervoso {
 		posicaoAviao--;		
 	}
 
-	public void atira() {		
-		tela[3][2] = '!';		
+	public void atira() {
+		posicaoTiro = posicaoAviao;
+		tela[2][posicaoTiro] = '!';		
 	}
 }

@@ -8,6 +8,12 @@ import javax.swing.JFrame;
 
 public class CapturadorDeTecla {
 
+	int keyCode;	
+	
+	public int getKeyCode() {
+		return keyCode;
+	}
+
 	public CapturadorDeTecla() {
 		
 		JFrame frame = new JFrame();
@@ -17,7 +23,7 @@ public class CapturadorDeTecla {
 		
 		button.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {
-				System.out.println(e.getKeyCode());
+				keyCode = e.getKeyCode();
 			}
 		});
 		

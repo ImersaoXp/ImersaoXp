@@ -15,16 +15,16 @@ public class TecoTecoNervosoMain {
 		{			
 			tela = tn.tela();
 			for (int linha = 0; linha < 5; linha++) {
-				if(capturador.getKeyCode() == 39){
+				int keyCodeTemp = capturador.getKeyCode();
+				if(keyCodeTemp == 39){
 					tn.direita();					
-				}else if (capturador.getKeyCode() == 37){
+				}else if (keyCodeTemp == 37){
 					tn.esquerda();
-				}
-				capturador.setKeyCode(0);
+				}				
 				System.out.println(tela[linha]);
 				
 			}
-			Thread.sleep(100);
+			Thread.sleep(50);
 		}
 		
 	}

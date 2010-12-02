@@ -15,8 +15,11 @@ public class CapturadorDeTecla {
 		this.keyCode = keyCode;
 	}
 
-	public int getKeyCode() {
-		return keyCode;
+	public int getKeyCode() {		
+		int keyCodeTemp = keyCode;
+		setKeyCode(0);
+		return keyCodeTemp;
+		
 	}
 
 	public CapturadorDeTecla() {

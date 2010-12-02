@@ -21,11 +21,18 @@ public class AviaoTiroTest {
 				"  !  ",
 				"  ^  ",
 		};
-		Assert.assertEquals(telaEsperada, jogo.tela());
-		
+		Assert.assertEquals(telaEsperada, jogo.tela());			
+	}
+	
+	@Ignore
+	@SuppressWarnings("deprecation")
+	@Test public void TiroAndaDuasVezes() {
+		TecoTecoNervoso jogo = new TecoTecoNervoso();
+		jogo.tela();
+		jogo.atira();
 		jogo.tela();
 		jogo.tela();
-		telaEsperada = new String[] {
+		String[] telaEsperada = new String[] {
 				"     ",
 				"  !  ",
 				"     ",
@@ -33,10 +40,21 @@ public class AviaoTiroTest {
 				"  ^  ",
 		};
 		Assert.assertEquals(telaEsperada, jogo.tela());
-
+	}
+	
+	@Ignore
+	@SuppressWarnings("deprecation")
+	@Test public void TiroAndaSeisVezes() {
+		TecoTecoNervoso jogo = new TecoTecoNervoso();
+		jogo.tela();
+		jogo.atira();
 		jogo.tela();
 		jogo.tela();
-		telaEsperada = new String[] {
+		jogo.tela();
+		jogo.tela();
+		jogo.tela();
+		jogo.tela();
+		String[] telaEsperada = new String[] {
 				"     ",
 				"     ",
 				"     ",
@@ -44,7 +62,6 @@ public class AviaoTiroTest {
 				"  ^  ",
 		};
 		Assert.assertEquals(telaEsperada, jogo.tela());
-		
 	}
 	
 	@Ignore

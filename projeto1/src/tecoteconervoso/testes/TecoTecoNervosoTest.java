@@ -37,7 +37,7 @@ public class TecoTecoNervosoTest {
 		Assert.assertEquals(telaDireita1, jogo.tela());
 	}
 	
-	@Ignore
+	
 	@SuppressWarnings("deprecation")
 	@Test public void aviaoNaDireitaDaTela() {
 		TecoTecoNervoso jogo = new TecoTecoNervoso();
@@ -56,7 +56,7 @@ public class TecoTecoNervosoTest {
 		Assert.assertEquals(telaDireita1, jogo.tela());
 	}
 	
-	@Ignore
+	
 	@SuppressWarnings("deprecation")
 	@Test public void aviaoNaEsquerdaDaTela() {
 		TecoTecoNervoso jogo = new TecoTecoNervoso();

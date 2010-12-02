@@ -4,7 +4,11 @@ public class TecoTecoNervoso {
 
 	public String[] tela() {
 		// TODO Auto-generated method stub
-		return null;
+		return new String[] {"     ",
+		"     ",
+		"     ",
+		"     ",
+		"  ^  ",};
 	}
 
 }

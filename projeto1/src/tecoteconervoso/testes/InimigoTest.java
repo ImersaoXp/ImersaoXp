@@ -28,5 +28,41 @@ public class InimigoTest {
 				"  ^  ",
 		};
 		Assert.assertEquals(telaEsperada, telaObtida);
-	}	
+	}
+	
+	@Ignore
+	@SuppressWarnings("deprecation")
+	@Test public void inimigoDesceEmLinhaReta() {
+		telaComInimigo();
+		jogo.tela();
+		String[] telaObtida = jogo.tela();
+		String[] telaEsperada = new String[] {
+				"     ",
+				"     ",
+				"    %",
+				"     ",
+				"  ^  ",
+		};
+		Assert.assertEquals(telaEsperada, telaObtida);
+	}
+	
+	@Ignore
+	@SuppressWarnings("deprecation")
+	@Test public void inimigoExplodeEmContatoComAviao() {
+		telaComInimigo();
+		jogo.direita();
+		jogo.direita();
+		jogo.tela();
+		jogo.tela();
+		jogo.tela();
+		String[] telaObtida = jogo.tela();
+		String[] telaEsperada = new String[] {
+				"     ",
+				"     ",
+				"     ",
+				"     ",
+				"    *",
+		};
+		Assert.assertEquals(telaEsperada, telaObtida);
+	}
 }

@@ -39,7 +39,7 @@ public class TecoTecoNervoso {
 	}
 
 	public void esquerda() {
-		// TODO Auto-generated method stub
+		posicaoAviao--;
 		
 	}
 

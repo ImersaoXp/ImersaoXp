@@ -10,7 +10,7 @@ import tecoteconervoso.TecoTecoNervoso;
 public class AviaoTiroTest {
 	@Ignore
 	@SuppressWarnings("deprecation")
-	@Test public void aviao() {
+	@Test public void aviaoAtira() {
 		TecoTecoNervoso jogo = new TecoTecoNervoso();
 		jogo.tela();
 		jogo.atira();

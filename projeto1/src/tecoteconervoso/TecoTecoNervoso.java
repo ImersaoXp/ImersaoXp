@@ -30,4 +30,11 @@ public class TecoTecoNervoso {
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
+	public void atira() {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -88,8 +88,7 @@ public class AviaoTiroTest {
 				"     ",
 				"^    ",
 		};
-		Assert.assertEquals(telaEsperada, jogo.tela());
-		
+		Assert.assertEquals(telaEsperada, jogo.tela());		
 	}
 
 }

@@ -33,5 +33,17 @@ public class AviaoTiroTest {
 				"  ^  ",
 		};
 		Assert.assertEquals(telaEsperada, jogo.tela());
+
+		jogo.tela();
+		jogo.tela();
+		telaEsperada = new String[] {
+				"     ",
+				"     ",
+				"     ",
+				"     ",
+				"  ^  ",
+		};
+		Assert.assertEquals(telaEsperada, jogo.tela());
+		
 	}
 }

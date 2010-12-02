@@ -1,29 +1,21 @@
+import java.util.Arrays;
+
 public class Teste {
 
 	public static char[][] mapa = new char[10][80]; 
+	static int posAviao = 30;
+	static int sinalDirecaoAviao = 1;
 	
 
 	public static void movimentaAviao() throws InterruptedException {
-		int pos = 30;
-		int sinal = +1;
-		while (true) {
-			System.out.println();
-			System.out.println();
-			System.out.println("  " + System.currentTimeMillis());
 
-			if (pos == 60) {
-				sinal = -sinal;
-			}
-
-			pos += sinal;
-
-			String str = Teste.replicaChar(" ", pos);
-
-			System.out.println(str + "  ^  ");
-
-			Thread.sleep(300);
-
+		if (posAviao == 20 || posAviao == 60) {
+			sinalDirecaoAviao = -sinalDirecaoAviao;
 		}
+
+		posAviao += sinalDirecaoAviao;
+
+		mapa[9][posAviao] = '^';
 	}
 
 	
@@ -37,11 +29,16 @@ public class Teste {
 	}
 
 	public static void main(String[] args) throws InterruptedException {
+		for (int i = 0; i <= 9; i++) {
+			Arrays.fill(mapa[i], ' ');
+		}
 		while (true) {
 			movimentaAviao();
 			System.out.println();
 			System.out.println();
-			//System.out.println("   " + System.currentTimeMillis());
+			for (int i = 0; i <= 9; i++) {
+				System.out.println(mapa[i]);
+			}
 			Thread.sleep(300);
 		}
 	}

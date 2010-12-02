@@ -11,19 +11,22 @@ public class TecoTecoNervoso {
 		inicializarJogo();
 	}
 
-
+	
 	public void inicializarJogo() {		
+		limparTela();
+		posicaoAviao = 2;				
+	}
+
+
+	public void limparTela() {
 		for (int x = 0; x < 5; x++) {
 			Arrays.fill(tela[x], ' ');
 		}
-		posicaoAviao = 2;
-		tela[4][posicaoAviao] = '^';
-		
 	}
 
-	
-
-	public String[] tela() {		
+	public String[] tela() {
+		limparTela();
+		tela[4][posicaoAviao] = '^';
 		String[] saida = new String[5];
 		for (int i = 0; i < 5; i++) {
 			saida[i] = new String(tela[i]);
@@ -32,8 +35,7 @@ public class TecoTecoNervoso {
 	}
 
 	public void direita() {
-		// TODO Auto-generated method stub
-		
+		posicaoAviao++;				
 	}
 
 	public void esquerda() {

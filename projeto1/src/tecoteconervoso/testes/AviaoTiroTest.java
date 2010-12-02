@@ -8,7 +8,7 @@ import tecoteconervoso.TecoTecoNervoso;
 
 
 public class AviaoTiroTest {
-	@Ignore
+	
 	@SuppressWarnings("deprecation")
 	@Test public void aviaoAtiraParado() {
 		TecoTecoNervoso jogo = new TecoTecoNervoso();

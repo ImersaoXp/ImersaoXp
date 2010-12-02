@@ -26,8 +26,7 @@ public class TecoTecoNervosoMain {
 
 			
 			for (int linha = 0; linha < 5; linha++) {
-				System.out.println(tela[linha]);
-				
+				System.out.println(tela[linha]);				
 			}
 			Thread.sleep(200);
 		}

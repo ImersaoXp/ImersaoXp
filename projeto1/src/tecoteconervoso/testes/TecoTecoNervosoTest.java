@@ -20,7 +20,32 @@ public class TecoTecoNervosoTest {
 		};
 		Assert.assertEquals(telaInicial, jogo.tela());
 	}
-
+	@SuppressWarnings("deprecation")
+	@Test public void aviaoAndaDireita() {
+		jogo.direita();
+		String[] telaEsperada = new String[] {
+				"     ",
+				"     ",
+				"     ",
+				"     ",
+				"   ^ ",
+		};
+		Assert.assertEquals(telaEsperada, jogo.tela());
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Test public void aviaoAndaEsquerda() {
+		jogo.esquerda();
+		String[] telaEsperada = new String[] {
+				"     ",
+				"     ",
+				"     ",
+				"     ",
+				" ^   ",
+		};
+		Assert.assertEquals(telaEsperada, jogo.tela());
+	}
+	
 	@SuppressWarnings("deprecation")
 	@Test public void aviaoRespeitaLimiteDireito() {
 		jogo.direita();

@@ -12,19 +12,24 @@ public class TecoTecoNervosoMain {
 		String[] tela;
 		
 		while(true) 
-		{			
+		{		
 			tela = tn.tela();
+			
+			int keyCodeTemp = capturador.getKeyCode();
+			if(keyCodeTemp == 39){
+				tn.direita();					
+			}else if (keyCodeTemp == 37){
+				tn.esquerda();
+			}else if (keyCodeTemp == 83){
+				tn.atira();
+			}				
+
+			
 			for (int linha = 0; linha < 5; linha++) {
-				int keyCodeTemp = capturador.getKeyCode();
-				if(keyCodeTemp == 39){
-					tn.direita();					
-				}else if (keyCodeTemp == 37){
-					tn.esquerda();
-				}				
 				System.out.println(tela[linha]);
 				
 			}
-			Thread.sleep(50);
+			Thread.sleep(200);
 		}
 		
 	}

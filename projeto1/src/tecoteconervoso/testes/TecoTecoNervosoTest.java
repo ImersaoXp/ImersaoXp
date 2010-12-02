@@ -1,12 +1,13 @@
 package tecoteconervoso.testes;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import tecoteconervoso.TecoTecoNervoso;
 
 public class TecoTecoNervosoTest {
-
+	@Ignore
 	@SuppressWarnings("deprecation")
 	@Test public void telaInicial() {
 		TecoTecoNervoso jogo = new TecoTecoNervoso();
@@ -20,27 +21,38 @@ public class TecoTecoNervosoTest {
 		Assert.assertEquals(telaInicial, jogo.tela());
 	}
 
-	
+	@Ignore
 	@SuppressWarnings("deprecation")
-	@Test public void fuel() {
+	@Test public void telaDireita() {
 		TecoTecoNervoso jogo = new TecoTecoNervoso();
 		jogo.tela();
-		String[] tela2 = new String[] {
-				"   F ",
+		jogo.direita();
+		String[] telaDireita1 = new String[] {
 				"     ",
 				"     ",
 				"     ",
-				"  ^  ",
+				"     ",
+				"   ^ ",
 		};
-		Assert.assertEquals(tela2, jogo.tela());
-		String[] tela3 = new String[] {
-				"     ",
-				"   F ",
-				"     ",
-				"     ",
-				"  ^  ",
-		};
-		Assert.assertEquals(tela3, jogo.tela());
+		Assert.assertEquals(telaDireita1, jogo.tela());
 	}
 	
+	@Ignore
+	@SuppressWarnings("deprecation")
+	@Test public void telaDireitaEsquerda() {
+		TecoTecoNervoso jogo = new TecoTecoNervoso();
+		jogo.tela();
+		jogo.direita();
+		jogo.direita();
+		jogo.esquerda();
+		jogo.direita();
+		String[] telaDireita1 = new String[] {
+				"     ",
+				"     ",
+				"     ",
+				"     ",
+				"    ^",
+		};
+		Assert.assertEquals(telaDireita1, jogo.tela());
+	}
 }

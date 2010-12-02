@@ -23,7 +23,7 @@ public class TecoTecoNervosoTest {
 
 	@Ignore
 	@SuppressWarnings("deprecation")
-	@Test public void telaDireita() {
+	@Test public void aviao1ParaDireita() {
 		TecoTecoNervoso jogo = new TecoTecoNervoso();
 		jogo.tela();
 		jogo.direita();
@@ -39,7 +39,7 @@ public class TecoTecoNervosoTest {
 	
 	@Ignore
 	@SuppressWarnings("deprecation")
-	@Test public void telaDireitaEsquerda() {
+	@Test public void aviaoNaDireitaDaTela() {
 		TecoTecoNervoso jogo = new TecoTecoNervoso();
 		jogo.tela();
 		jogo.direita();
@@ -52,6 +52,25 @@ public class TecoTecoNervosoTest {
 				"     ",
 				"     ",
 				"    ^",
+		};
+		Assert.assertEquals(telaDireita1, jogo.tela());
+	}
+	
+	@Ignore
+	@SuppressWarnings("deprecation")
+	@Test public void aviaoNaEsquerdaDaTela() {
+		TecoTecoNervoso jogo = new TecoTecoNervoso();
+		jogo.tela();
+		jogo.esquerda();
+		jogo.esquerda();
+		jogo.direita();
+		jogo.esquerda();
+		String[] telaDireita1 = new String[] {
+				"     ",
+				"     ",
+				"     ",
+				"     ",
+				"^    ",
 		};
 		Assert.assertEquals(telaDireita1, jogo.tela());
 	}

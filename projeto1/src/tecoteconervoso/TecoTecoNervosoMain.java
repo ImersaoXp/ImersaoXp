@@ -12,8 +12,7 @@ public class TecoTecoNervosoMain {
 		String[] tela;
 		
 		while(true) 
-		{
-			System.out.println(capturador.getKeyCode());
+		{			
 			tela = tn.tela();
 			for (int linha = 0; linha < 5; linha++) {
 				if(capturador.getKeyCode() == 39){

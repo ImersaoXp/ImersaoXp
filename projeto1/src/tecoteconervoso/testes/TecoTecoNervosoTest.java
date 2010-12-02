@@ -20,6 +20,18 @@ public class TecoTecoNervosoTest {
 		Assert.assertEquals(telaInicial, jogo.tela());
 	}
 
-
-	
+	@SuppressWarnings("deprecation")
+	@Test public void telaDireita() {
+		TecoTecoNervoso jogo = new TecoTecoNervoso();
+		jogo.tela();
+		jogo.direita();
+		String[] telaDireita1 = new String[] {
+				"     ",
+				"     ",
+				"     ",
+				"     ",
+				"   ^ ",
+		};
+		Assert.assertEquals(telaDireita1, jogo.tela());
+	}
 }

@@ -59,7 +59,7 @@ public class TecoTecoNervoso {
 	}
 
 	public void atira() {
-		if(posicaoTiroY < 0){
+		if(!temTiro()){
 			posicaoTiroX = aviao.posicaoX;
 			posicaoTiroY = aviao.posicaoY - 1;
 		}

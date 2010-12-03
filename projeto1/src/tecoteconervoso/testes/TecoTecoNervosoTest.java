@@ -1,13 +1,9 @@
 package tecoteconervoso.testes;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-import tecoteconervoso.TecoTecoNervoso;
 
-public class TecoTecoNervosoTest {
-	
-	private TecoTecoNervoso jogo = new TecoTecoNervoso();
+public class TecoTecoNervosoTest extends JogoBaseTest {
 	
 	@Test public void telaInicial() {
 		assertTela(new String[] {
@@ -17,13 +13,6 @@ public class TecoTecoNervosoTest {
 			"     ",
 			"  ^  ",
 		});
-	}
-	
-	
-	private void assertTela(String[] telaEsperada) {
-		String[] telaObservada = jogo.tela();
-		for (int i = 0; i < telaEsperada.length; i++)
-			Assert.assertEquals("Tela divergiu na linha " + i, telaEsperada[i], telaObservada[i]);
 	}
 	
 	

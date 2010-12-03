@@ -7,7 +7,7 @@ public class TecoTecoNervoso {
 	private int posicaoTiro = -1;
 	
 	public TecoTecoNervoso() {
-		super();
+
 		inicializarJogo();
 	}
 
@@ -24,12 +24,19 @@ public class TecoTecoNervoso {
 	public String[] tela() {
 		tela.limpar();
 		aviao.desenha(tela.mapa);
-		
-		if(posicaoTiro != - 1){
+		desenhaTiro();
+		return tela.renderizaLinhas();
+	}
+
+
+	private void desenhaTiro() {
+		if(temTiro())
 			tela.mapa[3][posicaoTiro] = '!';
-		}
-		
-		return tela.desenha();
+	}
+
+
+	private boolean temTiro() {
+		return posicaoTiro != - 1;
 	}
 
 	public void direita() {
@@ -44,6 +51,5 @@ public class TecoTecoNervoso {
 
 	public void atira() {
 		posicaoTiro = aviao.posicaoX;
-		tela.mapa[2][posicaoTiro] = '!';		
 	}
 }

@@ -4,22 +4,12 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import tecoteconervoso.TecoTecoNervoso;
+public class InimigoTest extends JogoBaseTest {
 
-public class InimigoTest {
-	TecoTecoNervoso jogo = new TecoTecoNervoso();
-
-	private String[] telaComInimigo() {
-		for(int i = 1; i < 10; i++) {
-			jogo.tela();
-		}
-		return jogo.tela();
-	}
-	
 	@Ignore
 	@SuppressWarnings("deprecation")
 	@Test public void inimigoApareceSuperiorDireito() {
-		String[] telaObtida = telaComInimigo();
+		String[] telaObtida = esperaTelas(10);
 		String[] telaEsperada = new String[] {
 				"    %",
 				"     ",
@@ -33,7 +23,7 @@ public class InimigoTest {
 	@Ignore
 	@SuppressWarnings("deprecation")
 	@Test public void inimigoDesceEmLinhaReta() {
-		telaComInimigo();
+		esperaTelas(10);
 		jogo.tela();
 		String[] telaObtida = jogo.tela();
 		String[] telaEsperada = new String[] {
@@ -49,7 +39,7 @@ public class InimigoTest {
 	@Ignore
 	@SuppressWarnings("deprecation")
 	@Test public void inimigoExplodeEmContatoComAviao() {
-		telaComInimigo();
+		esperaTelas(10);
 		jogo.direita();
 		jogo.direita();
 		jogo.tela();
@@ -69,7 +59,7 @@ public class InimigoTest {
 	@Ignore
 	@SuppressWarnings("deprecation")
 	@Test public void inimigoExplodeEmContatoComTiro() {
-		telaComInimigo();
+		esperaTelas(10);
 		jogo.direita();
 		jogo.direita();
 		jogo.atira();

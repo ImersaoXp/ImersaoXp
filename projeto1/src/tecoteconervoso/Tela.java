@@ -19,7 +19,7 @@ public class Tela {
 		}
 	}
 	
-	public String[] desenha() {
+	public String[] renderizaLinhas() {
 		String[] saida = new String[altura];
 		for (int linha = 0; linha < altura; linha++) {
 			saida[linha] = new String(mapa[linha]);

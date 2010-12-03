@@ -8,4 +8,6 @@ public interface Elemento {
 
 	char character();
 
+	boolean estaNaTela();
+
 }

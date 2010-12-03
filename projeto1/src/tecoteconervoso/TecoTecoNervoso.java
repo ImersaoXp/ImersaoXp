@@ -23,15 +23,30 @@ public class TecoTecoNervoso {
 	public String[] tela() {
 		tela.limpar();
 		
+		inimigo.passo();
+		
 		desenha(aviao);
-		inimigo.desenha(tela.mapa);
+		desenha(inimigo);
 		tiro.desenha(tela.mapa);
+		
+		desenhaColisao(aviao, inimigo);
+		
 		return tela.renderizaLinhas();
 	}
 
-	private void desenha(Elemento elemento) {
-		tela.mapa[elemento.linha()][elemento.coluna()] = elemento.character();
+	private void desenhaColisao(Elemento elemento1, Elemento elemento2) {
+		if (!elemento1.estaNaTela()) return;
+		if (!elemento2.estaNaTela()) return;
 		
+		if(elemento1.linha() != elemento2.linha()) return;
+		if(elemento1.coluna() != elemento2.coluna()) return;
+		
+		tela.mapa[elemento1.linha()][elemento1.coluna()] = '*';
+	}
+
+	private void desenha(Elemento elemento) {
+		if (!elemento.estaNaTela()) return;
+		tela.mapa[elemento.linha()][elemento.coluna()] = elemento.character();
 	}
 
 	public void direita() {

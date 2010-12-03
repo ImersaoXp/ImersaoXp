@@ -22,19 +22,13 @@ public class Aviao implements Elemento {
 			posicaoX--;
 	}
 
-	@Override
-	public int linha() {
-		return posicaoY;
-	}
+	@Override public int linha() { return posicaoY; }
+	@Override public int coluna() { return posicaoX;	}
+	@Override public char character() { return '^';	}
 
 	@Override
-	public int coluna() {
-		return posicaoX;
-	}
-
-	@Override
-	public char character() {
-		return '^';
+	public boolean estaNaTela() {
+		return true;
 	}
 
 }

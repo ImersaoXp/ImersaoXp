@@ -1,35 +1,32 @@
 package tecoteconervoso;
 
-public class Inimigo {
+public class Inimigo implements Elemento {
 	public static final int ESPERA_TELAS = 10;
 	private int qtdTelas;
 	private int y = 0;
 	public boolean inimigoNaTela = false;
 	
-	public void desenha(char[][] mapa) {			
-		desenhaInimigo();
-		explodeInimigo(mapa);
-		
-	}
 
-	private void explodeInimigo(char[][] mapa) {
-		if (inimigoNaTela) {
-			if (mapa[y][4] != ' ') {
-				mapa[y][4] = '*';
-				inimigoNaTela = false;
-			}
-			else
-				mapa[y][4] = '%';
-			y++;
-			if (y>4) inimigoNaTela = false;
-		}
-	}
-
-	private void desenhaInimigo() {
+	void passo() {
 		qtdTelas++;	
 		if (qtdTelas % 10 == 0){
 			y = 0;
 			inimigoNaTela = true;
+			return;
 	    }
+
+		y++;
+		if (y>4) inimigoNaTela = false;
+
 	}
+
+	@Override public int linha() { return y; }
+	@Override public int coluna() { return 4;	}
+	@Override public char character() { return '%'; }
+
+	@Override
+	public boolean estaNaTela() {
+		return inimigoNaTela;
+	}
+
 }

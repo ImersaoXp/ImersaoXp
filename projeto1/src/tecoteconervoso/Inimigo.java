@@ -13,8 +13,13 @@ public class Inimigo {
 			y = 0;
 			inimigoNaTela = true;
 	    }
-		if (inimigoNaTela) {	
-			mapa[y][4] = '%';
+		if (inimigoNaTela) {
+			if (mapa[y][4] != ' ') {
+				mapa[y][4] = '*';
+				inimigoNaTela = false;
+			}
+			else
+				mapa[y][4] = '%';
 			y++;
 			if (y>4) inimigoNaTela = false;
 		}

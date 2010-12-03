@@ -1,24 +1,19 @@
 package tecoteconervoso;
 
-public class Aviao {
+public class Aviao implements Elemento {
 	private static final int LINHA_DO_AVIAO = 4;
 	public int posicaoX = 2;
 	public int posicaoY = LINHA_DO_AVIAO;
-	public Tela telaAtual;
+	private int _larguraDaTela;
 
 	
 	
-	public Aviao(Tela telaAtual) {
-		super();
-		this.telaAtual = telaAtual;
+	public Aviao(int larguraDaTela) {
+		_larguraDaTela = larguraDaTela;
 	}
 
-	public void desenha() {
-		telaAtual.mapa[LINHA_DO_AVIAO][posicaoX] = '^';
-	}
-
-	public void direita(char[][] mapa) {
-		if (posicaoX < telaAtual.largura - 1)
+	public void direita() {
+		if (posicaoX < _larguraDaTela - 1)
 			posicaoX++;
 	}
 
@@ -27,9 +22,19 @@ public class Aviao {
 			posicaoX--;
 	}
 
-	public Tiro atira() {
-		Tiro tiro = new Tiro(this.posicaoX, this.posicaoY - 1);
-		return tiro;
+	@Override
+	public int linha() {
+		return posicaoY;
+	}
+
+	@Override
+	public int coluna() {
+		return posicaoX;
+	}
+
+	@Override
+	public char character() {
+		return '^';
 	}
 
 }

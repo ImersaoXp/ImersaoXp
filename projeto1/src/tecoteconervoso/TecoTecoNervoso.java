@@ -13,7 +13,7 @@ public class TecoTecoNervoso {
 
 	public void inicializarJogo() {
 		tela = new Tela(5, 5);
-		aviao = new Aviao(tela);
+		aviao = new Aviao(tela.largura);
 		inimigo = new Inimigo();
 		tiro = new Tiro();
 		tela.limpar();
@@ -22,14 +22,20 @@ public class TecoTecoNervoso {
 
 	public String[] tela() {
 		tela.limpar();
-		aviao.desenha();
+		
+		desenha(aviao);
 		inimigo.desenha(tela.mapa);
 		tiro.desenha(tela.mapa);
 		return tela.renderizaLinhas();
 	}
 
+	private void desenha(Elemento elemento) {
+		tela.mapa[elemento.linha()][elemento.coluna()] = elemento.character();
+		
+	}
+
 	public void direita() {
-		aviao.direita(tela.mapa);
+		aviao.direita();
 
 	}
 
@@ -40,8 +46,7 @@ public class TecoTecoNervoso {
 
 	public void atira() {
 		if (!tiro.aparecendo())
-			tiro = aviao.atira();
-
+			tiro = new Tiro(aviao.posicaoX, aviao.posicaoY - 1);
 	}
 
 }

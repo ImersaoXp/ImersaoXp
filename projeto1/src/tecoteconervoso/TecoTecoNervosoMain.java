@@ -27,6 +27,7 @@ public class TecoTecoNervosoMain {
 	public static void main(String[] args) throws Exception {
 		cacheBitmaps.put('^', ImageIO.read(MainDemo.class.getResourceAsStream("Aviao.JPG")));
 		cacheBitmaps.put(' ', ImageIO.read(MainDemo.class.getResourceAsStream("Mar.JPG")));
+		cacheBitmaps.put('!', ImageIO.read(MainDemo.class.getResourceAsStream("Missel.jpg")));
 		
 		TecoTecoNervoso tn = new TecoTecoNervoso();
 		CapturadorDeTecla capturador = new CapturadorDeTecla();

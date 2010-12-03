@@ -4,7 +4,9 @@ package tecoteconervoso;
 public class TecoTecoNervoso {
 	private Aviao aviao;
 	private Tela tela;
-	private int posicaoTiro = -1;
+	private Inimigo inimigo;
+	private int posicaoTiroX = -1;
+	private int posicaoTiroY = -1;
 	
 	public TecoTecoNervoso() {
 
@@ -15,6 +17,7 @@ public class TecoTecoNervoso {
 	public void inicializarJogo() {		
 		tela = new Tela(5, 5);
 		aviao = new Aviao();
+		inimigo = new Inimigo();
 		
 		tela.limpar();
 		aviao.posicaoX = 2;				
@@ -24,6 +27,7 @@ public class TecoTecoNervoso {
 	public String[] tela() {
 		tela.limpar();
 		aviao.desenha(tela.mapa);
+		inimigo.desenha(tela.mapa);
 		desenhaTiro();
 		return tela.renderizaLinhas();
 	}
@@ -31,12 +35,17 @@ public class TecoTecoNervoso {
 
 	private void desenhaTiro() {
 		if(temTiro())
-			tela.mapa[3][posicaoTiro] = '!';
+		{
+			tela.mapa[posicaoTiroY][posicaoTiroX] = '!';
+			posicaoTiroY--;
+			if (posicaoTiroY < 0)
+				posicaoTiroX = -1;
+		}
 	}
 
 
 	private boolean temTiro() {
-		return posicaoTiro != - 1;
+		return posicaoTiroX != - 1;
 	}
 
 	public void direita() {
@@ -50,6 +59,9 @@ public class TecoTecoNervoso {
 	}
 
 	public void atira() {
-		posicaoTiro = aviao.posicaoX;
+		if(posicaoTiroY < 0){
+			posicaoTiroX = aviao.posicaoX;
+			posicaoTiroY = aviao.posicaoY - 1;
+		}
 	}
 }

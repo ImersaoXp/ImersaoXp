@@ -28,6 +28,8 @@ public class TecoTecoNervosoMain {
 		cacheBitmaps.put('^', ImageIO.read(MainDemo.class.getResourceAsStream("Aviao.JPG")));
 		cacheBitmaps.put(' ', ImageIO.read(MainDemo.class.getResourceAsStream("Mar.JPG")));
 		cacheBitmaps.put('!', ImageIO.read(MainDemo.class.getResourceAsStream("Missel.jpg")));
+		cacheBitmaps.put('%', ImageIO.read(MainDemo.class.getResourceAsStream("ET.bmp")));
+		cacheBitmaps.put('*', ImageIO.read(MainDemo.class.getResourceAsStream("Explosion.jpg")));
 		
 		TecoTecoNervoso tn = new TecoTecoNervoso();
 		CapturadorDeTecla capturador = new CapturadorDeTecla();
@@ -59,7 +61,7 @@ public class TecoTecoNervosoMain {
 
 	
 	private static void esperaUmPouquinho() throws InterruptedException {
-		Thread.sleep(200);
+		Thread.sleep(500);
 	}
 
 	private static void capturaBotao(TecoTecoNervoso tn, CapturadorDeTecla capturador) {

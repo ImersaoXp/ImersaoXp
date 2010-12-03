@@ -10,16 +10,25 @@ public class LoopPrincipal {
 	private final JogoModoTexto _jogo;
 	private Map<Character, BufferedImage> _mapa;
 	private JogoCanvas _canvas;
+	CapturadorDeTecla capturador;
+	
+	private static final int TECLA_S = 83;
+	private static final int SETA_ESQUERDA = 37;
+	private static final int SETA_DIREITA = 39;
+
+
 
 	public LoopPrincipal(JogoModoTexto jogo, Map<Character, BufferedImage> cacheBitmaps) {
 		_jogo = jogo; 
 		_mapa = cacheBitmaps;
+		capturador = new CapturadorDeTecla();
 	}
 
 	public void start()  {
 		iniciaCapturaDeTeclas();
 		
 		while (true) {
+			capturaBotao(capturador);
 			esperaUmPouquinho();
 			_jogo.step();
 			exibeTelaGrafica();
@@ -41,6 +50,16 @@ public class LoopPrincipal {
 		frame.add(_canvas);
 		frame.setVisible(true);
 	}
+	
+	
+	private void capturaBotao(CapturadorDeTecla capturador) {
+		int tecla = capturador.getKeyCode();
+
+		if (tecla == SETA_DIREITA) _jogo.direita();					
+		if (tecla == SETA_ESQUERDA) _jogo.esquerda();
+		if (tecla == TECLA_S) _jogo.espaco();
+	}
+
 	
 	private void imprimeTelaNoConsole() {
 		String[] tela = _jogo.tela();

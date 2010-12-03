@@ -1,12 +1,10 @@
 package tecoteconervoso;
 
-import java.util.Arrays;
 
 public class TecoTecoNervoso {
-	private char[][] tela = new char[5][5];
 	private Aviao aviao;
+	private Tela tela;
 	private int posicaoTiro = -1;
-	private int posicaoTiroY = 2;
 	
 	public TecoTecoNervoso() {
 		super();
@@ -15,30 +13,25 @@ public class TecoTecoNervoso {
 
 	
 	public void inicializarJogo() {		
+		tela = new Tela(5, 5);
 		aviao = new Aviao();
-		limparTela();
+		
+		tela.limpar();
 		aviao.posicaoX = 2;				
 	}
 
 
-	public void limparTela() {
-		for (int x = 0; x < 5; x++) {
-			Arrays.fill(tela[x], ' ');
-		}
-	}
-
 	public String[] tela() {
-		limparTela();
-		aviao.desenha(tela);
-		
+		tela.limpar();
+		aviao.desenha(tela.mapa);
 		
 		if(posicaoTiro != - 1){
-			tela[3][posicaoTiro] = '!';
+			tela.mapa[3][posicaoTiro] = '!';
 		}
 		
 		String[] saida = new String[5];
 		for (int i = 0; i < 5; i++) {
-			saida[i] = new String(tela[i]);
+			saida[i] = new String(tela.mapa[i]);
 		}
 		return saida;
 	}
@@ -55,6 +48,6 @@ public class TecoTecoNervoso {
 
 	public void atira() {
 		posicaoTiro = aviao.posicaoX;
-		tela[2][posicaoTiro] = '!';		
+		tela.mapa[2][posicaoTiro] = '!';		
 	}
 }

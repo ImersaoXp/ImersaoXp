@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class TecoTecoNervoso {
 	private char[][] tela = new char[5][5];
-	private int posicaoAviao;
+	private Aviao aviao;
 	private int posicaoTiro = -1;
 	private int posicaoTiroY = 2;
 	
@@ -15,8 +15,9 @@ public class TecoTecoNervoso {
 
 	
 	public void inicializarJogo() {		
+		aviao = new Aviao();
 		limparTela();
-		posicaoAviao = 2;				
+		aviao.posicaoX = 2;				
 	}
 
 
@@ -28,7 +29,8 @@ public class TecoTecoNervoso {
 
 	public String[] tela() {
 		limparTela();
-		tela[4][posicaoAviao] = '^';
+		aviao.desenha(tela);
+		
 		
 		if(posicaoTiro != - 1){
 			tela[3][posicaoTiro] = '!';
@@ -42,17 +44,17 @@ public class TecoTecoNervoso {
 	}
 
 	public void direita() {
-		if(posicaoAviao < 4)
-			posicaoAviao++;		
+		if(aviao.posicaoX < 4)
+			aviao.direita();	
 	}
 
 	public void esquerda() {
-		if(posicaoAviao > 0)
-		posicaoAviao--;		
+		if(aviao.posicaoX > 0)
+			aviao.esquerda();	
 	}
 
 	public void atira() {
-		posicaoTiro = posicaoAviao;
+		posicaoTiro = aviao.posicaoX;
 		tela[2][posicaoTiro] = '!';		
 	}
 }

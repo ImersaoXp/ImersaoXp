@@ -14,8 +14,16 @@ public class Tela {
 	}
 	
 	public void limpar() {
-		for (int linha = 0; linha < 5; linha++) {
+		for (int linha = 0; linha < altura; linha++) {
 			Arrays.fill(mapa[linha], ' ');
 		}
+	}
+	
+	public String[] desenha() {
+		String[] saida = new String[altura];
+		for (int linha = 0; linha < altura; linha++) {
+			saida[linha] = new String(mapa[linha]);
+		}
+		return saida;
 	}
 }

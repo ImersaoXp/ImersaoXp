@@ -29,11 +29,7 @@ public class TecoTecoNervoso {
 			tela.mapa[3][posicaoTiro] = '!';
 		}
 		
-		String[] saida = new String[5];
-		for (int i = 0; i < 5; i++) {
-			saida[i] = new String(tela.mapa[i]);
-		}
-		return saida;
+		return tela.desenha();
 	}
 
 	public void direita() {

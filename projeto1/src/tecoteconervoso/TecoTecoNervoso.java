@@ -5,7 +5,8 @@ public class TecoTecoNervoso {
 	private Aviao aviao;
 	private Tela tela;
 	private Inimigo inimigo;
-	private int posicaoTiro = -1;
+	private int posicaoTiroX = -1;
+	private int posicaoTiroY = -1;
 	
 	public TecoTecoNervoso() {
 
@@ -34,12 +35,17 @@ public class TecoTecoNervoso {
 
 	private void desenhaTiro() {
 		if(temTiro())
-			tela.mapa[3][posicaoTiro] = '!';
+		{
+			tela.mapa[posicaoTiroY][posicaoTiroX] = '!';
+			posicaoTiroY--;
+			if (posicaoTiroY < 0)
+				posicaoTiroX = -1;
+		}
 	}
 
 
 	private boolean temTiro() {
-		return posicaoTiro != - 1;
+		return posicaoTiroX != - 1;
 	}
 
 	public void direita() {
@@ -53,6 +59,7 @@ public class TecoTecoNervoso {
 	}
 
 	public void atira() {
-		posicaoTiro = aviao.posicaoX;
+		posicaoTiroX = aviao.posicaoX;
+		posicaoTiroY = aviao.posicaoY - 1;
 	}
 }

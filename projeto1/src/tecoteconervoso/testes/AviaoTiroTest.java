@@ -17,7 +17,6 @@ public class AviaoTiroTest extends JogoBaseTest {
 				"  ^  ",
 		});
 	}
-
 	@Ignore
 	@Test public void TiroAndaDuasVezes() {
 		tela();
@@ -33,7 +32,6 @@ public class AviaoTiroTest extends JogoBaseTest {
 		});
 	}
 	
-	@Ignore
 	@Test public void TiroAndaSeisVezes() {
 		tela();
 		atira();
@@ -47,7 +45,6 @@ public class AviaoTiroTest extends JogoBaseTest {
 		});
 	}
 	
-	@Ignore
 	@Test public void aviaoAtiraEAndaDireita() {
 		tela();
 		direita();
@@ -61,8 +58,7 @@ public class AviaoTiroTest extends JogoBaseTest {
 				"    ^",
 		});
 		
-		tela();
-		tela();
+/*		tela();
 		assertTela(new String[] {
 				"     ",
 				"  !  ",
@@ -83,7 +79,6 @@ public class AviaoTiroTest extends JogoBaseTest {
 				"     ",
 				"     ",
 				"^    ",
-		});		
+		});		*/
 	}
-
 }

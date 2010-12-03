@@ -3,6 +3,7 @@ package tecoteconervoso;
 public class Aviao {
 	private static final int LINHA_DO_AVIAO = 4;
 	public int posicaoX = 2;
+	public int posicaoY = LINHA_DO_AVIAO;
 	
 	public void direita() {
 		posicaoX++;		

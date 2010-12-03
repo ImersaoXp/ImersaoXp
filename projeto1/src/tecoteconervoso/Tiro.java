@@ -3,9 +3,18 @@ package tecoteconervoso;
 public class Tiro {
 	private int posicaoTiroX = -1;
 	private int posicaoTiroY = -1;
+
+	public Tiro(){
+		
+	}
 	
+	public Tiro(int posicaoTiroX, int posicaoTiroY) {
+		this.posicaoTiroX = posicaoTiroX;
+		this.posicaoTiroY = posicaoTiroY;
+	}
+
 	public void desenha(char[][] mapa) {			
-		if(temTiro())
+		if(aparecendo())
 		{
 			mapa[posicaoTiroY][posicaoTiroX] = '!';
 			posicaoTiroY--;
@@ -15,14 +24,8 @@ public class Tiro {
 		
 	}
 	
-	private boolean temTiro() {
+	public boolean aparecendo() {
 		return posicaoTiroX != - 1;
 	}
 
-	public void atira(Aviao aviao) {
-		if(!temTiro()){
-			posicaoTiroX = aviao.posicaoX;
-			posicaoTiroY = aviao.posicaoY - 1;
-		}
-	}
 }

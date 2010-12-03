@@ -1,6 +1,5 @@
 package tecoteconervoso.testes;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 

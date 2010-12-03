@@ -58,10 +58,10 @@ public class AviaoTiroTest extends JogoBaseTest {
 				"    ^",
 		});
 		
-/*		tela();
+		tela();
 		assertTela(new String[] {
 				"     ",
-				"  !  ",
+				"   ! ",
 				"     ",
 				"     ",
 				"    ^",
@@ -74,11 +74,11 @@ public class AviaoTiroTest extends JogoBaseTest {
 		esquerda();
 		esquerda();
 		assertTela(new String[] {
-				"  !  ",
+				"     ",
 				"     ",
 				"     ",
 				"     ",
 				"^    ",
-		});		*/
+		});		
 	}
 }

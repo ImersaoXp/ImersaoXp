@@ -17,19 +17,15 @@ public class InimigoTest extends JogoBaseTest {
 		});
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Test public void inimigoDesceEmLinhaReta() {
-		esperaTelas(10);
-		jogo.tela();
-		String[] telaObtida = jogo.tela();
-		String[] telaEsperada = new String[] {
+		esperaTelas(11);
+		assertTela(new String[] {
 				"     ",
 				"     ",
 				"    %",
-				"     ",
+				"	  ",
 				"  ^  ",
-		};
-		Assert.assertEquals(telaEsperada, telaObtida);
+		});
 	}
 	
 	@Ignore

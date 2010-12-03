@@ -4,6 +4,7 @@ package tecoteconervoso;
 public class TecoTecoNervoso {
 	private Aviao aviao;
 	private Tela tela;
+	private Inimigo inimigo;
 	private int posicaoTiro = -1;
 	
 	public TecoTecoNervoso() {
@@ -15,6 +16,7 @@ public class TecoTecoNervoso {
 	public void inicializarJogo() {		
 		tela = new Tela(5, 5);
 		aviao = new Aviao();
+		inimigo = new Inimigo();
 		
 		tela.limpar();
 		aviao.posicaoX = 2;				
@@ -24,6 +26,7 @@ public class TecoTecoNervoso {
 	public String[] tela() {
 		tela.limpar();
 		aviao.desenha(tela.mapa);
+		inimigo.desenha(tela.mapa);
 		desenhaTiro();
 		return tela.renderizaLinhas();
 	}

@@ -6,21 +6,17 @@ import org.junit.Test;
 
 public class InimigoTest extends JogoBaseTest {
 
-	@Ignore
-	@SuppressWarnings("deprecation")
 	@Test public void inimigoApareceSuperiorDireito() {
-		String[] telaObtida = esperaTelas(10);
-		String[] telaEsperada = new String[] {
+		esperaTelas(9);
+		assertTela(new String[] {
 				"    %",
 				"     ",
 				"     ",
 				"     ",
 				"  ^  ",
-		};
-		Assert.assertEquals(telaEsperada, telaObtida);
+		});
 	}
 	
-	@Ignore
 	@SuppressWarnings("deprecation")
 	@Test public void inimigoDesceEmLinhaReta() {
 		esperaTelas(10);

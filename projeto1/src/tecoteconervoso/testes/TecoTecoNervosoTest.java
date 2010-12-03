@@ -27,7 +27,6 @@ public class TecoTecoNervosoTest {
 	}
 	
 	
-	@SuppressWarnings("deprecation")
 	@Test public void aviaoAndaDireita() {
 		jogo.direita();
 		assertTela(new String[] {
@@ -39,7 +38,6 @@ public class TecoTecoNervosoTest {
 		});
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Test public void aviaoAndaEsquerda() {
 		jogo.esquerda();
 		assertTela(new String[] {
@@ -51,7 +49,6 @@ public class TecoTecoNervosoTest {
 		});
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Test public void aviaoRespeitaLimiteDireito() {
 		jogo.direita();
 		jogo.direita();
@@ -66,7 +63,6 @@ public class TecoTecoNervosoTest {
 		});
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Test public void aviaoRespeitaLimiteEsquerdo() {
 		jogo.esquerda();
 		jogo.esquerda();
@@ -79,5 +75,4 @@ public class TecoTecoNervosoTest {
 				"^    ",
 		});
 	}
-	
 }

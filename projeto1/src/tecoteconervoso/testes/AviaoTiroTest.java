@@ -1,6 +1,5 @@
 package tecoteconervoso.testes;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -17,7 +16,7 @@ public class AviaoTiroTest extends JogoBaseTest {
 				"  ^  ",
 		});
 	}
-	@Ignore
+
 	@Test public void TiroAndaDuasVezes() {
 		tela();
 		atira();

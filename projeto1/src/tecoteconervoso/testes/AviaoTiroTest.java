@@ -8,9 +8,11 @@ import tecoteconervoso.TecoTecoNervoso;
 
 
 public class AviaoTiroTest {
+	
+	TecoTecoNervoso jogo = new TecoTecoNervoso();
+	
 	@SuppressWarnings("deprecation")
 	@Test public void aviaoAtiraParado() {
-		TecoTecoNervoso jogo = new TecoTecoNervoso();
 		jogo.tela();
 		jogo.atira();
 		String[] telaEsperada = new String[] {
@@ -26,7 +28,6 @@ public class AviaoTiroTest {
 	@Ignore
 	@SuppressWarnings("deprecation")
 	@Test public void TiroAndaDuasVezes() {
-		TecoTecoNervoso jogo = new TecoTecoNervoso();
 		jogo.tela();
 		jogo.atira();
 		jogo.tela();
@@ -44,7 +45,6 @@ public class AviaoTiroTest {
 	@Ignore
 	@SuppressWarnings("deprecation")
 	@Test public void TiroAndaSeisVezes() {
-		TecoTecoNervoso jogo = new TecoTecoNervoso();
 		jogo.tela();
 		jogo.atira();
 		jogo.tela();
@@ -65,8 +65,7 @@ public class AviaoTiroTest {
 	
 	@Ignore
 	@SuppressWarnings("deprecation")
-	@Test public void aviaoAtiraEAnda() {
-		TecoTecoNervoso jogo = new TecoTecoNervoso();
+	@Test public void aviaoAtiraEAndaDireita() {
 		jogo.tela();
 		jogo.direita();
 		jogo.atira();		

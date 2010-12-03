@@ -9,41 +9,46 @@ public class TecoTecoNervosoTest {
 	
 	private TecoTecoNervoso jogo = new TecoTecoNervoso();
 	
-	@SuppressWarnings("deprecation")
 	@Test public void telaInicial() {
-		String[] telaInicial = new String[] {
-				"     ",
-				"     ",
-				"     ",
-				"     ",
-				"  ^  ",
-		};
-		Assert.assertEquals(telaInicial, jogo.tela());
+		assertTela(new String[] {
+			"     ",
+			"     ",
+			"     ",
+			"     ",
+			"  ^  ",
+		});
 	}
+	
+	
+	private void assertTela(String[] telaEsperada) {
+		String[] telaObservada = jogo.tela();
+		for (int i = 0; i < telaEsperada.length; i++)
+			Assert.assertEquals("Tela divergiu na linha " + i, telaEsperada[i], telaObservada[i]);
+	}
+	
+	
 	@SuppressWarnings("deprecation")
 	@Test public void aviaoAndaDireita() {
 		jogo.direita();
-		String[] telaEsperada = new String[] {
+		assertTela(new String[] {
 				"     ",
 				"     ",
 				"     ",
 				"     ",
 				"   ^ ",
-		};
-		Assert.assertEquals(telaEsperada, jogo.tela());
+		});
 	}
 	
 	@SuppressWarnings("deprecation")
 	@Test public void aviaoAndaEsquerda() {
 		jogo.esquerda();
-		String[] telaEsperada = new String[] {
+		assertTela(new String[] {
 				"     ",
 				"     ",
 				"     ",
 				"     ",
 				" ^   ",
-		};
-		Assert.assertEquals(telaEsperada, jogo.tela());
+		});
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -51,14 +56,14 @@ public class TecoTecoNervosoTest {
 		jogo.direita();
 		jogo.direita();
 		jogo.direita();
-		String[] telaEsperada = new String[] {
+
+		assertTela(new String[] {
 				"     ",
 				"     ",
 				"     ",
 				"     ",
 				"    ^",
-		};
-		Assert.assertEquals(telaEsperada, jogo.tela());
+		});
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -66,14 +71,13 @@ public class TecoTecoNervosoTest {
 		jogo.esquerda();
 		jogo.esquerda();
 		jogo.esquerda();
-		String[] telaEsperada = new String[] {
+		assertTela(new String[] {
 				"     ",
 				"     ",
 				"     ",
 				"     ",
 				"^    ",
-		};
-		Assert.assertEquals(telaEsperada, jogo.tela());
+		});
 	}
 	
 }

@@ -11,8 +11,8 @@ public class MainDemo {
 	
 	public static void main(String[] args) throws IOException {
 		Map<Character, BufferedImage> cacheBitmaps = new HashMap<Character, BufferedImage>();
-		cacheBitmaps.put('1', ImageIO.read(MainDemo.class.getResourceAsStream("Aviao.JPG")));
-		cacheBitmaps.put('2', ImageIO.read(MainDemo.class.getResourceAsStream("Mar.JPG")));
+		cacheBitmaps.put('^', ImageIO.read(MainDemo.class.getResourceAsStream("Aviao.JPG")));
+		cacheBitmaps.put(' ', ImageIO.read(MainDemo.class.getResourceAsStream("Mar.JPG")));
 		LoopPrincipal loop = new LoopPrincipal(new JogoDemo(), cacheBitmaps);
 		
 		loop.start();

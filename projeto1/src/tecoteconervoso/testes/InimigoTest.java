@@ -23,7 +23,7 @@ public class InimigoTest extends JogoBaseTest {
 				"     ",
 				"     ",
 				"    %",
-				"	  ",
+				"     ",
 				"  ^  ",
 		});
 	}

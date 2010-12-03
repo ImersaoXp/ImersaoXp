@@ -33,7 +33,7 @@ public class TecoTecoNervoso {
 	}
 
 	public void direita() {
-		if(aviao.posicaoX < 4)
+		if(aviao.posicaoX < tela.largura-1)
 			aviao.direita();	
 	}
 

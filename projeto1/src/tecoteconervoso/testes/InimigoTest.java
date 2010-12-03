@@ -6,7 +6,6 @@ import org.junit.Test;
 
 public class InimigoTest extends JogoBaseTest {
 
-	@Ignore
 	@SuppressWarnings("deprecation")
 	@Test public void inimigoApareceSuperiorDireito() {
 		String[] telaObtida = esperaTelas(10);

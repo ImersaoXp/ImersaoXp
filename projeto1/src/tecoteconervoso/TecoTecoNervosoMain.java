@@ -35,22 +35,25 @@ public class TecoTecoNervosoMain {
 		CapturadorDeTecla capturador = new CapturadorDeTecla();
 		iniciaCanvas();
 		
+		String[] tela;
 		while(true) {		
-			capturaBotao(tn, capturador);				
-			printaTela(tn.tela());
-			exibeTelaGrafica(tn);
+			capturaBotao(tn, capturador);
+			tela = tn.tela();
+			printaTela(tela);
+			exibeTelaGrafica(tela);
 			esperaUmPouquinho();
 		}		
 	}
 	
-	private static void exibeTelaGrafica(TecoTecoNervoso tn) {
-		canvas.atualizaTela(tn.tela());
+	private static void exibeTelaGrafica(String[] tela) {
+		canvas.atualizaTela(tela);
 	}
 
 
 	private static void iniciaCanvas() {
 		JFrame frame = new JFrame();
-		frame.setSize(448, 478);
+		//frame.setSize(448, 478);
+		frame.setSize(500, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		canvas = new JogoCanvas(cacheBitmaps);
 		canvas.setFocusable(true);

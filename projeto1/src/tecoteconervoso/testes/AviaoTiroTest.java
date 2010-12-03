@@ -17,7 +17,7 @@ public class AviaoTiroTest extends JogoBaseTest {
 				"  ^  ",
 		});
 	}
-	@Ignore
+
 	@Test public void TiroAndaDuasVezes() {
 		tela();
 		atira();

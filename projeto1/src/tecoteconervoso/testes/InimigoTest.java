@@ -43,32 +43,30 @@ public class InimigoTest extends JogoBaseTest {
 		});
 	}
 	
+	
 	@Ignore
-	@SuppressWarnings("deprecation")
 	@Test public void inimigoExplodeEmContatoComTiro() {
-		esperaTelas(10);
+		esperaTelas(9);
 		jogo.direita();
 		jogo.direita();
 		jogo.atira();
-		String[] telaObtida = jogo.tela();
-		String[] telaEsperada = new String[] {
+		
+		assertTela(new String[] {
 				"    %",
 				"     ",
 				"     ",
 				"    !",
 				"    ^",
-		};
-		Assert.assertEquals(telaEsperada, telaObtida);
+		});
 		
-		jogo.tela();
-		telaObtida = jogo.tela();
-		telaEsperada = new String[] {
+		tela();
+		
+		assertTela(new String[] {
 				"     ",
 				"    *",
 				"     ",
 				"     ",
 				"    ^",
-		};
-		Assert.assertEquals(telaEsperada, telaObtida);
+		});
 	}
 }

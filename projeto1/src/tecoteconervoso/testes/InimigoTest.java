@@ -28,24 +28,19 @@ public class InimigoTest extends JogoBaseTest {
 		});
 	}
 	
-	@Ignore
-	@SuppressWarnings("deprecation")
+
 	@Test public void inimigoExplodeEmContatoComAviao() {
 		esperaTelas(10);
-		jogo.direita();
-		jogo.direita();
-		jogo.tela();
-		jogo.tela();
-		jogo.tela();
-		String[] telaObtida = jogo.tela();
-		String[] telaEsperada = new String[] {
+		direita();
+		direita();
+		esperaTelas(3);
+		assertTela(new String[] {
 				"     ",
 				"     ",
 				"     ",
 				"     ",
 				"    *",
-		};
-		Assert.assertEquals(telaEsperada, telaObtida);
+		});
 	}
 	
 	@Ignore

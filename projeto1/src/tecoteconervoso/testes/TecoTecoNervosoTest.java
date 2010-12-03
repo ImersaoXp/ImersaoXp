@@ -17,6 +17,7 @@ public class TecoTecoNervosoTest extends JogoBaseTest {
 	
 	
 	@Test public void aviaoAndaDireita() {
+		jogo.tela();
 		jogo.direita();
 		assertTela(new String[] {
 				"     ",
@@ -39,6 +40,7 @@ public class TecoTecoNervosoTest extends JogoBaseTest {
 	}
 	
 	@Test public void aviaoRespeitaLimiteDireito() {
+		jogo.tela();
 		jogo.direita();
 		jogo.direita();
 		jogo.direita();
